@@ -1,10 +1,10 @@
 from openai import OpenAI
+import os
 
 client = OpenAI(
-    token = os.environ["GOOGLE_API_KEY"]
-    endpoint = "https://generativelanguage.googleapis.com/v1beta/openai/"
-    model_name = "gemini-2.0-flash"
-    base_url= endpoint)
+    api_key=os.environ["GOOGLE_API_KEY"],
+    base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
+    )
 
 response = client.chat.completions.create(
     model="gemini-2.0-flash",
